@@ -1,10 +1,10 @@
 #EMBL-Bank Growth
 library(zoo)
 library(sfsmisc)
-svg("~/other/EMBLBank_growth3.svg", 6, 6)
+svg("figs/EMBLBank_growth3.svg", 6, 6)
 options(scipen=3)
 par(mar=c(2.5,4.1,2.5,2.1), xaxs="r", lend=2)
-ebg <- as.data.frame(read.table("~/Desktop/EMBLBankGrowth", header=T, quote="\"", 
+ebg <- as.data.frame(read.table("data/EMBLBankGrowth.fixedWidth", header=T, quote="\"", 
                                 colClasses=c("numeric", "character","numeric", "numeric")))
 ebg[,2] <- as.yearmon(gsub("/", "-", ebg[,2]), "%m-%Y")
 plot(ebg[,2], ebg[,4], type="l", log="y", col="blue", lwd=2, xlab="", 

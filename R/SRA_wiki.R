@@ -5,7 +5,7 @@ slices <- c(84, 12, 2, 2)
 lbls <- c("Illumina GA", "SOLiD", "454", "Other")
 options(scipen=5)
 ###########
-svg("figs/SRA_growth3.svg", 6,5)
+svg("SRA_growth3.svg", 6,5)
 par(mar=c(2,4,2,2), cex=1)
 sra_stat <- read.csv("data/sra_stat.csv")
 typeof(sra_stat[,1])

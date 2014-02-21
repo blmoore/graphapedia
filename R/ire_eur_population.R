@@ -51,7 +51,7 @@ ggplot(dat, aes(x=Year, y=Population, col=Area)) +
   geom_line() + facet_wrap(~Area, scales="free_y", ncol=1)
 
 ## r-base version
-svg("figs/ire_eur_pop.svg", 6, 4.5)
+svg("figs/ire_eur_pop.svg", 6, 4)
 par(mar=c(2.5,4,1,5), mgp=c(2,.65,0))
 plot(eu[,1:2], type="n", col="darkblue", axes=F, 
      ylim=c(0,920), xlim=c(1740, 2006), xlab="", ylab="")

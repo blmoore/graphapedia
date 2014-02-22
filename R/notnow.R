@@ -22,12 +22,12 @@ ggplot(summary, aes(x=Month, y=Number, fill=reason)) +
   scale_y_continuous(expand=c(0,0)) +
   labs(list(y="Number of unsuccesful RfAs per month", x="", fill="Reason"))
 ,
-ggplot(summary, aes(x=Number, y=..density.., fill=reason)) +
-  geom_density(alpha=I(.3)) + theme_bw() +
-  theme(legend.position=c(.8,.8), legend.background=element_blank()) +
-  labs(list(x="Number of unsuccesful RfAs per month", y="Density", fill="Reason")) +
-  geom_vline(xintercept=4, linetype="dashed") +
-  annotate("text", x=5.2, y=.23, label="This month", size=3.5)
+ggplot(summary, aes(x=reason, y=Number, fill=reason)) +
+  geom_violin() + theme_bw() +
+  theme(legend.position="none") +
+  labs(list(y="Number of unsuccesful RfAs per month", x="", fill="Reason")) +
+  geom_segment(x=.5, xend=1.5, y=4, yend=4) +
+  annotate("text", x=1, y=4.2, label="This month NOTNOW", size=3.5)
 , ncol=2)
 dev.off()
 
@@ -40,3 +40,5 @@ lines(exp, col="darkred")
 qqplot(summary$Number, rpois(200, mean(summary$Number)))
 
 dpois(4, mean(summary$Number))
+
+median(summary$Number)

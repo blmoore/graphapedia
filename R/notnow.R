@@ -20,12 +20,12 @@ ggplot(summary, aes(x=Month, y=Number, fill=reason)) +
         legend.position=c(.8,.8),
         legend.background=element_blank()) +
   scale_y_continuous(expand=c(0,0)) +
-  labs(list(y="Number of unsuccesful RfAs per month", x="", fill="Reason"))
+  labs(list(y="Number of unsuccessful RfAs per month", x="", fill="Reason"))
 ,
 ggplot(summary, aes(x=reason, y=Number, fill=reason)) +
   geom_violin() + theme_bw() +
   theme(legend.position="none") +
-  labs(list(y="Number of unsuccesful RfAs per month", x="", fill="Reason")) +
+  labs(list(y="Number of unsuccessful RfAs per month", x="", fill="Reason")) +
   geom_segment(x=.5, xend=1.5, y=4, yend=4) +
   annotate("text", x=1, y=4.2, label="This month NOTNOW", size=3.5)
 , ncol=2)
